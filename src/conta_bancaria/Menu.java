@@ -1,5 +1,6 @@
 package conta_bancaria;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 import conta_bancaria.model.Conta;
@@ -14,8 +15,21 @@ public class Menu {
 		float saldo;
 		Scanner scanner = new Scanner(System.in);
 		
-		Conta c1 = new Conta(1, 4815, 1, "Marcos Meneses", 10);
+		//Criar (instancias) o objeto da classe
+		Conta c1 = new Conta(1, 4815, 1, "Marcos", 10);
 		c1.visualizar(); //mostrar o objeto criado
+		
+		//Sacar
+		c1.sacar(100);
+		c1.visualizar();
+
+		//Depositar
+		c1.depositar(1000);
+		c1.visualizar();
+		
+		//Alterar a propriedade titular
+		c1.setTitular("Marcos Meneses");
+		c1.visualizar();
 		
 		while(true) {
 			
@@ -52,43 +66,57 @@ public class Menu {
 		switch (opcao) {
 			case 1:
 				System.out.println("Criar Conta\n\n");
-
+				keyPress();
 				break;
 			case 2:
 				System.out.println("Listar todas as Contas\n\n");
-
+				keyPress();
 				break;
 			case 3:
 				System.out.println("Consultar dados da Conta - por número\n\n");
-
+				keyPress();
 				break;
 			case 4:
 				System.out.println("Atualizar dados da Conta\n\n");
-
+				keyPress();
 				break;
 			case 5:
 				System.out.println("Apagar a Conta\n\n");
-
+				keyPress();
 				break;
 			case 6:
 				System.out.println("Saque\n\n");
-
+				keyPress();
 				break;
 			case 7:
 				System.out.println("Depósito\n\n");
-
+				keyPress();
 				break;
 			case 8:
 				System.out.println("Transferência entre Contas\n\n");
-
+				keyPress();
 				break;
 			default:
 				System.out.println("\nOpção Inválida!\n");
+				keyPress();
 				break;
 		}
 	}
 }
 
+	public static void keyPress() {
+
+		try {
+
+			System.out.println(Cores.TEXT_RESET + "\n\nPressione Enter para Continuar...");
+			System.in.read();
+
+		} catch (IOException e) {
+
+			System.out.println("Você pressionou uma tecla diferente de enter!");
+
+		}
+	}
 
 //		System.out.println(Cores.TEXT_BLACK + Cores.ANSI_BLACK_BACKGROUND + "Olá mundo!           ");
 //		// Se não existir outro comando de cor ela se mantem
@@ -103,4 +131,19 @@ public static void sobre() {
 	System.out.println("https://github.com/MarcosvMeneses");
 	System.out.println("*********************************************************");
 }
+
+public static void keyPress() {
+	 
+	try {
+
+		System.out.println(Cores.TEXT_RESET + "\n\nPressione Enter para Continuar...");
+		System.in.read();
+
+	} catch (IOException e) {
+
+		System.err.println("Ocorreu um erro ao tentar ler o teclado");
+
+	}
+}
+
 }	

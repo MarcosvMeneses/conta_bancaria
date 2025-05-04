@@ -59,6 +59,22 @@ public class Conta {
 		this.saldo = saldo;
 	}
 	
+	// Métodos Bancários
+	public boolean sacar(float valor) {
+		if (this.saldo < valor) {
+			System.out.println("\nSaldo é insuficiente");
+			return false;
+		}
+
+		this.saldo -= valor;
+		return true;
+	}
+
+	public void depositar(float valor) {
+		this.saldo += valor;
+	}
+	
+	//Método para visualizar
 	public void visualizar() {
 		
 		NumberFormat nfMoeda = NumberFormat.getCurrencyInstance();
@@ -72,17 +88,19 @@ public class Conta {
 		}
 		
 		
+		
+		
 		System.out.println("*****************************************************");
 		System.out.println("\t\tDADOS DA CONTA                           ");
 		System.out.println("*****************************************************");
 		System.out.println("\tNúmero da conta: " + this.numero + "                           ");
-		System.out.println("\tNúmero da agencia: " + this.agencia + "\t\t";
+		System.out.println("\tNúmero da agencia: " + this.agencia + "\t\t");
 		System.out.println("\tNúmero da conta: " + tipo);
 		System.out.println("\tNúmero da titular: " + this.titular);
 		System.out.println("\tSaldo da Conta:  " + this.saldo);
 
 		
 	}
-
 	
+
 }
