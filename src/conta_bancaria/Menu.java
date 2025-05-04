@@ -100,9 +100,24 @@ public class Menu {
 				System.out.println("\nOpção Inválida!\n");
 				keyPress();
 				break;
+			}
 		}
 	}
-}
+
+
+//		System.out.println(Cores.TEXT_BLACK + Cores.ANSI_BLACK_BACKGROUND + "Olá mundo!           ");
+//		// Se não existir outro comando de cor ela se mantem
+//		System.out.println("Texte de cor");
+//		
+//		System.out.println(Cores.TEXT_RESET + "Cores resetadas");
+
+	public static void sobre() {
+		System.out.println(Cores.TEXT_RESET+ "\n*********************************************************");
+		System.out.println("Projeto Desenvolvido por: ");
+		System.out.println("Marcos Vinicius Nogueira Meneses - Marcosvnm1@hotmail.com");
+		System.out.println("https://github.com/MarcosvMeneses");
+		System.out.println("*********************************************************");
+	}
 
 	public static void keyPress() {
 
@@ -118,32 +133,4 @@ public class Menu {
 		}
 	}
 
-//		System.out.println(Cores.TEXT_BLACK + Cores.ANSI_BLACK_BACKGROUND + "Olá mundo!           ");
-//		// Se não existir outro comando de cor ela se mantem
-//		System.out.println("Texte de cor");
-//		
-//		System.out.println(Cores.TEXT_RESET + "Cores resetadas");
-
-public static void sobre() {
-	System.out.println(Cores.TEXT_RESET+ "\n*********************************************************");
-	System.out.println("Projeto Desenvolvido por: ");
-	System.out.println("Marcos Vinicius Nogueira Meneses - Marcosvnm1@hotmail.com");
-	System.out.println("https://github.com/MarcosvMeneses");
-	System.out.println("*********************************************************");
 }
-
-public static void keyPress() {
-	 
-	try {
-
-		System.out.println(Cores.TEXT_RESET + "\n\nPressione Enter para Continuar...");
-		System.in.read();
-
-	} catch (IOException e) {
-
-		System.err.println("Ocorreu um erro ao tentar ler o teclado");
-
-	}
-}
-
-}	
