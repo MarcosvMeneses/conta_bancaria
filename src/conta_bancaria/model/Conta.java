@@ -2,7 +2,7 @@ package conta_bancaria.model;
 
 import java.text.NumberFormat;
 
-public class Conta {
+public abstract class Conta {
 
 	// atributos da classe
 	private int numero, agencia, tipo;
@@ -17,6 +17,8 @@ public class Conta {
 		this.titular = titular;
 		this.saldo = saldo;
 	}
+	
+	public Conta() {}
 
 	//	método get set
 	public int getNumero() {

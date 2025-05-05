@@ -3,7 +3,8 @@ package conta_bancaria;
 import java.io.IOException;
 import java.util.Scanner;
 
-import conta_bancaria.model.Conta;
+
+import conta_bancaria.model.ContaCorrente;
 import conta_bancaria.util.Cores;
 
 public class Menu {
@@ -16,20 +17,18 @@ public class Menu {
 		Scanner scanner = new Scanner(System.in);
 		
 		//Criar (instancias) o objeto da classe
-		Conta c1 = new Conta(1, 4815, 1, "Marcos", 10);
-		c1.visualizar(); //mostrar o objeto criado
+		ContaCorrente cc1 = new ContaCorrente(2, 456, 1, "Marcos Meneses", 600000, 60000);
+		cc1.visualizar();
 		
-		//Sacar
-		c1.sacar(100);
-		c1.visualizar();
-
-		//Depositar
-		c1.depositar(1000);
-		c1.visualizar();
+		cc1.sacar(659000);
+		cc1.visualizar();
+		
+		cc1.depositar(50000);
+		cc1.visualizar();
 		
 		//Alterar a propriedade titular
-		c1.setTitular("Marcos Meneses");
-		c1.visualizar();
+		//c1.setTitular("Marcos Meneses");
+		//c1.visualizar();
 		
 		while(true) {
 			
